@@ -44,12 +44,14 @@ func (b *BitVector) Rank0(i int) int {
 }
 
 // Select1 is the inverse of Rank1, i.e. it returns the index of the r-th '1'.
+// Note that r is 0-origined, so Select1(3) returns the fourth (1-origin) '1'.
 // It is illegal to call this with r > bv.Rank1(bv.Len()).
 func (b *BitVector) Select1(r int) int {
 	return b.binarySearch(0, b.size+1, r, 1)
 }
 
 // Select0 is the inverse of Rank0, i.e. it returns the index of the r-th '0'.
+// Note that r is 0-origined, so Select0(3) returns the fourth (1-origin) '0'.
 // It is illegal to call this with r > bv.Rank0(bv.Len()).
 func (b *BitVector) Select0(r int) int {
 	return b.binarySearch(0, b.size+1, r, 0)

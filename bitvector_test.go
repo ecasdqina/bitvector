@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	maxSize  = 256
+	maxSize  = 512
 	attempts = 3
 )
 
