@@ -21,8 +21,6 @@ type BitVector struct {
 	rank []int
 }
 
-// NewFromDump constructs BitVector from the dump.
-
 // Get returns 1 or 0, the value of the i-th bit in the bit vector.
 func (b *BitVector) Get(i int) int {
 	return int((b.v[i/64] >> uint(i%64)) & 1)
